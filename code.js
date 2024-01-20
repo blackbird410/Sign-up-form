@@ -1,5 +1,14 @@
-// Create the UI layout
+// Validate the form
 createLayout();
+addValidation();
+
+function addValidation() {
+	const form = document.querySelector('form');
+	form.setAttribute('noValidate', 'false');
+
+
+}
+
 
 function createLayout() {
 	const body = document.body;
@@ -75,18 +84,28 @@ function createLayout() {
 		{
 			case 'EMAIL':
 				input.setAttribute('type', 'email');
+				input.setAttribute('placeholder', 'alanturing@gmail.com');
 				input.setAttribute('autocomplete', 'on');
 				break;
 			case 'PHONE NUMBER':
 				input.setAttribute('type', 'tel');
+				input.setAttribute('placeholder', '0937549257');
 				break;
 			case 'PASSWORD':
 			case 'CONFIRM PASSWORD':
 				input.setAttribute('type', 'password');
+				if (field == 'PASSWORD')
+					input.setAttribute('placeholder', 'mathison@cs1900');
+				else
+					input.setAttribute('placeholder', 'mathison@cs1900');
 				break;
 			default:
 				input.setAttribute('type', 'text');
 				input.setAttribute('autocomplete', 'on');
+				if (field == "FIRST NAME")
+					input.setAttribute('placeholder', 'Alan');
+				else
+					input.setAttribute('placeholder', 'Turing');
 				break;
 		}
 
