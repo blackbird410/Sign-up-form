@@ -1,11 +1,11 @@
 @font-face {
 	font-family: 'Norse-bold';
-	src: url('/norse/Norsebold.otf');
+	src: url('norse/Norsebold.otf');
 }
 
 @font-face {
 	font-family: 'Norse-regular';
-	src: url('/norse/Norse.otf');
+	src: url('norse/Norse.otf');
 }
 
 :root {
@@ -45,7 +45,7 @@ body {
 }
 
 .welcome {
-	background-image: url('/bg.jpg');
+	background-image: url('bg.jpg');
 	background-size: cover;
 }
 
@@ -56,7 +56,7 @@ body {
 }
 
 .logo {
-	background: url('/logo.png');
+	background: url('logo.png');
 	background-size: cover;
 	filter: invert(1);
 	border-radius: 50%;
