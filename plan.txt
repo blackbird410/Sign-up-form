@@ -1,0 +1,21 @@
+Plan of the Sign-up-form project
+--------------------------------
+
+1- Create the UI layout
+	- The main layout will use flex display
+	- Two main divs:
+		* One containing the background image, logo and title and credit
+		* One containing the layout of the form
+	- The second div will contain:
+		* A paragraph describing the purpose of the form
+		* The form layout
+	- The form layout contain:
+		* 6 divs for information input
+		* Each div have a label, an input element and a span for feedback
+		* When focus is on the input, the border will turn to blue
+		* Invalid input after interaction, the border will turn red
+2- Add validation code for the form
+	* Create a function to validate the form
+	* When validating the password:
+		* Check first if the password match the pattern
+		* Secondly, check if the input matches the "confirm password" input.
