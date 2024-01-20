@@ -61,12 +61,14 @@ body {
 	filter: invert(1);
 	border-radius: 50%;
 	flex-basis: 100px;
+	flex-shrink: 1;
 	height: 100px;
 }
 
 h1 {
 	font-family: Norse-bold;
 	font-size: 2rem;
+	flex-shrink: 2;
 }
 
 .title,
