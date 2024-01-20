@@ -39,6 +39,8 @@ function createLayout() {
 	const welcomeText = document.createElement('h2');
 	const secondText = document.createElement('p');
 	const form = document.createElement('form');
+	form.setAttribute('id', 'form');
+	form.classList.add('container');
 
 	headerContainer.classList.add('container', 'main-header');
 
@@ -49,11 +51,85 @@ function createLayout() {
 	headerContainer.appendChild(secondText);
 
 	// Form layout
-	const formHeader = document.createElement('h2')
+	const formHeader = document.createElement('h2');
+	formHeader.textContent = "Let's do this!";
+	form.appendChild(formHeader);
+
+	const fieldset = document.createElement('div');
+	fieldset.classList.add('fieldset');
+	form.appendChild(fieldset);
+
+	const fields = ['FIRST NAME', 'LAST NAME', 'EMAIL', 'PHONE NUMBER', 'PASSWORD', 'CONFIRM PASSWORD'];
+	fields.forEach(field => {
+		const container = document.createElement('div');
+		const label = document.createElement('label');
+		const input = document.createElement('input');
+
+		container.classList.add('container', 'input-container');
+
+		let id = getId(field);
+		label.setAttribute('for', id);
+		label.textContent = field;
+
+		switch(field) 
+		{
+			case 'EMAIL':
+				input.setAttribute('type', 'email');
+				input.setAttribute('autocomplete', 'on');
+				break;
+			case 'PHONE NUMBER':
+				input.setAttribute('type', 'tel');
+				break;
+			case 'PASSWORD':
+			case 'CONFIRM PASSWORD':
+				input.setAttribute('type', 'password');
+				break;
+			default:
+				input.setAttribute('type', 'text');
+				input.setAttribute('autocomplete', 'on');
+				break;
+		}
+
+		input.setAttribute('id', id);
+		input.setAttribute('name', id);
+
+		container.appendChild(label);
+		container.appendChild(input);
+		fieldset.appendChild(container);
+	});
+
+	// Button layout
+	const btnContainer = document.createElement('div');
+	const btn = document.createElement('button');
+	const logInContainer = document.createElement('div');
+	const logInText = document.createElement('p');
+	const logInLink = document.createElement('a');
+
+	btnContainer.classList.add('container', 'button');
+	logInContainer.classList.add('container', 'log-in');
+
+	btn.textContent = 'Create Account';
+	btn.setAttribute('type', 'submit');
+	btn.setAttribute('form', 'form');
+
+	logInText.textContent = 'Already have an account?';
+	logInLink.setAttribute('href', '#');
+	logInLink.textContent = 'Log in';
+
+	btnContainer.appendChild(btn);
+	logInContainer.appendChild(logInText);
+	logInContainer.appendChild(logInLink);
+	btnContainer.appendChild(logInContainer);
 
 	secondContainer.appendChild(headerContainer);
 	secondContainer.appendChild(form);
+	secondContainer.appendChild(btnContainer);
 
 	body.appendChild(firstContainer);
 	body.appendChild(secondContainer);
+}
+
+function getId(s) {
+	let arr = (s.toLowerCase()).split(' ');
+	return (arr.length == 1) ? arr[0] : `${arr[0]}-${arr[1]}`;
 }

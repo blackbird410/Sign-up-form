@@ -9,22 +9,18 @@
 }
 
 :root {
-	--mainFont: Norse-regular;
-	--linkHover: #97E7F5;
+	--mainFont: 'Roboto';
+
+	--linkHoverColor: #97E7F5;
+	--formBgColor: #928E85;
+
 	--mainPadding: 30px;
 	--regularFontSize: 18px;
 }
 
 * {
-    font-family: var(--mainFont), 'Roboto', 'Helvetica', 'sans-serif';
+    font-family: var(--mainFont), 'Helvetica', 'sans-serif';
     color: white;
-}
-
-body {
-	padding: 0;
-	margin: 0;
-	height: 100vh;
-	background-color: #5a5a5a;
 }
 
 .container {
@@ -34,10 +30,18 @@ body {
 	flex-wrap: wrap;
 }
 
+body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #5a5a5a;
+}
+
 .welcome,
 .main {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 }
 
 .welcome {
@@ -46,9 +50,9 @@ body {
 }
 
 .main {
-	flex-direction: column;
-	align-items: baseline;
-	padding: 80px 0;
+	justify-content: space-between;
+	align-items: stretch;
+	padding: 0;
 }
 
 .logo {
@@ -63,6 +67,14 @@ body {
 h1 {
 	font-family: Norse-bold;
 	font-size: 2rem;
+}
+
+.title,
+.credit,
+a,
+h2,
+p {
+	font-family: Norse-regular;
 }
 
 .title,
@@ -85,8 +97,8 @@ a {
 }
 
 a:hover {
-	color: var(--linkHover);
-	font-size: 24px;
+	color: var(--linkHoverColor);
+	font-size: 18px;
 }
 
 a:nth-of-type(2)::before {
@@ -97,15 +109,92 @@ a:nth-of-type(2)::before {
 .main-header {
 	padding: 0 var(--mainPadding);
 	text-align: center;
+	flex-direction: column;
 }
 
 .main-header h2:first-of-type {
 	line-height: 2rem;
+	margin-bottom: 0;
 }
 
 .main-header p {
 	font-size: var(--regularFontSize);
 	font-weight: bold;
-	color: var(--linkHover);
+	color: var(--linkHoverColor);
 }
 
+#form {
+	background-color: var(--formBgColor);
+	padding: var(--mainPadding);
+	padding-top: 12px;
+	flex-direction: column;
+}
+
+
+.fieldset {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	max-width: 600px;
+}
+
+.input-container {
+	flex-direction: column;
+	background-color: inherit;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-grow: 1;
+	padding: 5px;
+	gap: 8px;
+	max-width: 280px;
+}
+
+input {
+	border: none;
+	border-bottom: 2px solid white;
+	border-radius: 16px;
+	width: 90%;
+	height: 24px;
+	outline: none;
+	cursor: pointer;
+	color: black;
+	padding-left: 12px;
+
+}
+
+input:hover,
+input:focus {
+	border-color: var(--linkHoverColor);
+}
+
+.button {
+	flex-direction: column;
+	width: 100%;
+	margin-top: 8px;
+	justify-content: center;
+}
+
+button {
+	padding: 16px;
+	background-color: orange;
+	font-weight: bold;
+	border: none;
+	border-radius: 16px;
+	font-size: var(--regularFontSize);
+}
+
+#form h2 {
+	margin-right: auto;
+}
+
+@media only screen and (min-width: 700px)
+{
+	body.container {
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+}
