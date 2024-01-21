@@ -21,6 +21,7 @@ let validInput = {
 	'password': false,
 	'confirm-password': false,
 }
+
 addEvents();
 myForm.addEventListener('submit', validateForm);
 
@@ -128,7 +129,7 @@ function addEvents() {
 						document.querySelector('#confirm-password + span').textContent = "Password do not match";
 					}
 					else
-						document.querySelector('#confirm-password + span').textContent = "Please input a valid password";
+						document.querySelector('#confirm-password + span').textContent = "Please enter a valid password";
 					break;
 				default:
 					console.log('Error');
