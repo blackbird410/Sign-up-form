@@ -224,9 +224,9 @@ function createLayout() {
 			case 'CONFIRM PASSWORD':
 				input.setAttribute('type', 'password');
 				if (field == 'PASSWORD')
-					input.setAttribute('placeholder', 'mathison@cs1900');
+					input.setAttribute('placeholder', 'Mathison@cs1900');
 				else
-					input.setAttribute('placeholder', 'mathison@cs1900');
+					input.setAttribute('placeholder', 'Mathison@cs1900');
 				help.textContent = "Please enter a valid password";
 				break;
 			default:
