@@ -124,9 +124,11 @@ function addEvents() {
 					}
 
 					if (validInput.password != validInput['confirm-password'])
-						input.parentElement.classList.add('not-match');
+					{
+						document.querySelector('#confirm-password + span').textContent = "Password do not match";
+					}
 					else
-						input.parentElement.classList.remove('not-match');
+						document.querySelector('#confirm-password + span').textContent = "Please input a valid password";
 					break;
 				default:
 					console.log('Error');
