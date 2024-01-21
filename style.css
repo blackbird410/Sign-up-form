@@ -189,6 +189,22 @@ button {
 	font-size: var(--regularFontSize);
 }
 
+.help {
+	display: none;
+	font-size: 0.8rem;
+}
+
+.valid input {
+	border-color: green;
+}
+
+.invalid .help,
+.invalid input {
+	color: red;
+	border-color: red;
+	display: flex;
+}
+
 #form h2 {
 	margin-right: auto;
 }
